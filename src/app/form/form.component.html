@@ -1,0 +1,51 @@
+<form class="example-form" (submit)="onPrice()" #f="ngForm">
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Nominal" name="nominal" [(ngModel)] = "nominal" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Coupon" name="coupon" [(ngModel)] = "coupon" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Periodicity" name="periodicity" [(ngModel)] = "periodicity" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="number" matInput placeholder="Maturity" name="maturity" [(ngModel)] = "maturity" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="date" matInput placeholder="Initial date" name="initialDate" [(ngModel)] = "initialDate" required
+    max="{{maxDate | date:'dd-MM-yyyy'}}" min="{{minDate | date:'dd-MM-yyyy'}}">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input type="date" matInput placeholder="Date to price" name="dateToPrice" [(ngModel)] = "dateToPrice" required
+    max="{{maxDate | date:'dd-MM-yyyy'}}" min="{{minDate | date:'dd-MM-yyyy'}}">
+  </mat-form-field>
+  <p>minimum date : {{minDate | date:'dd-MM-yyyy'}} AND maximum date : {{maxDate | date:'dd-MM-yyyy'}}</p>
+
+  <button mat-raised-button color="primary" [disabled]=f.invalid>send</button>
+</form>
+<br><br>
+<div >
+  <!-- <span>Prices : </span> --> <!--  {{price}}  {{rates | async}}  .getDate()  style="float:left"-->
+  
+
+  <div *ngIf="chart">
+      <canvas id="canvas">{{ chart }}</canvas>
+  </div>
+  <!-- <ul>
+    <li *ngFor="let priceCurbe of result">
+        <p>{{priceCurbe.date | date:'dd-MM-yyyy'}} : {{priceCurbe.price}}</p>
+    </li>
+  </ul>-->
+  <!--<h3 *ngIf="chart">My Graph !</h3>-->
+  <!--value={{issueDate}} [(ngModel)] = "issueDate"
+    disabled="true" {{initialDate | date: 'dd-MM-yyyy'}}
+  -->
+  <!---->
+</div>
+
+

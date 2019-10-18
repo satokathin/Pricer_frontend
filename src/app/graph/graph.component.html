@@ -1,0 +1,8 @@
+<div>
+    <h3>My Graph {{data}}!</h3>
+  <ul>
+    <li *ngFor="let priceCurbe of data">
+        <p>{{priceCurbe.date | date:'dd-MM-yyyy'}} : {{priceCurbe.price}}</p>
+    </li>
+  </ul>
+</div>
